@@ -1,0 +1,36 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button> -->
+    <!-- <block wx:else> -->
+    <block>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <text class="userinfo-vip" bindtap='pay' wx:if="{{!hasVip}}">{{vipTip1}}</text>
+      <text class="userinfo-vip" wx:if="{{hasVip}}">{{vipTip2}}{{viptime}}天</text>
+    </block>
+  </view>
+</view>
+<view style='padding-bottom:60rpx;'>
+  <view>
+    <view class='first-cell'>
+      <text class='date' style='margin-top:40rpx;font-size:44rpx;margin-left:26rpx;'>我的收藏</text>
+    </view>
+    <view class='list' wx:for="{{articalList}}" wx:key="item.id">
+      <view wx:if="{{item.ispay==='1'&&!hasVip}}" style='position: relative;'>
+        <image class='vip-article' src="../images/icon_vip_article.png"></image>
+      </view>
+      <view class='view-text'  data-item="{{item}}" data-title="{{item.title}}" data-num="{{item.view}}" data-article="{{item.id}}" bindtap="goto">
+        <text class='text'>{{item.title}}</text>
+        <view style='margin:20rpx 0;'>
+          <text class='viewcount' style='float:left;color:#6296c8;'>发布时间:{{item.fabu_time}}</text>
+          <text class='viewcount' style='float:right;color:#6296c8;'>阅读量:{{item.view}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='loading' wx:if="{{!hiddenloading}}">
+    <image mode="aspectFit" src="../images/loading.gif"></image>
+  </view>
+
+</view>

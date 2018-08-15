@@ -1,0 +1,6 @@
+{
+  "backgroundColor": "#000",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTitleText": "十分阅读",
+  "enablePullDownRefresh": true
+}

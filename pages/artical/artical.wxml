@@ -1,0 +1,70 @@
+<!--pages/artical/artical.wxml-->
+<view class='list' style='padding-bottom:60rpx'>
+
+  <view class='view-text'>
+    <view class=''>
+      <text class='title'>{{title}}</text>
+      <view class='info'>
+        <text class="small publish">发布时间:{{create_time}}</text>
+        <text class='small view'>阅读量:{{num}}</text>
+      </view>
+      <view class='line' style='margin-bottom:30rpx;'></view>
+      <import src="../../wxParse/wxParse.wxml" />
+      <template is="wxParse" data="{{wxParseData:contents[0].nodes}}" />
+      <template is="wxParse" data="{{wxParseData:contents[1].nodes}}" />
+      <template is="wxParse" data="{{wxParseData:contents[2].nodes}}" />
+      <template is="wxParse" data="{{wxParseData:contents[3].nodes}}" />
+      <template is="wxParse" data="{{wxParseData:contents[4].nodes}}" />
+      <template is="wxParse" data="{{wxParseData:contents[5].nodes}}" />
+      <template is="wxParse" data="{{wxParseData:contents[6].nodes}}" />
+      <template is="wxParse" data="{{wxParseData:contents[7].nodes}}" />
+      <template is="wxParse" data="{{wxParseData:contents[8].nodes}}" />
+      <template is="wxParse" data="{{wxParseData:contents[9].nodes}}" />
+      <template is="wxParse" data="{{wxParseData:contents[10].nodes}}" />
+      <template is="wxParse" data="{{wxParseData:contents[11].nodes}}" />
+      <view class="topic-opts" wx:if="{{type===2}}">
+        <view class="instant-view" hoverClass="highlight">
+          <image src="../images/icn-instantview@3x.png"></image>
+          <button bindgetuserinfo='getUserInfo' open-type='getUserInfo'>付费阅读</button>
+        </view>
+      </view>
+      <view class='line'></view>
+      <block>
+        <view class="user-attitude-component">
+          <view class="user-attitude single">
+            <view class="options">
+              <view bindtap="doThumb" class="select-button {{isThumb===1?'selected':'unselected'}}" hoverClass="highlight">
+                <image class="default-icon" src="../images/icn-thumb-up-normal@3x.png"></image>
+                <image class="hover-icon" src="../images/icn-thumb-up-hover@3x.png"></image>
+                <text>赞</text>
+              </view>
+            </view>
+            <view class="stat">已有 {{thumbs}} 人赞</view>
+          </view>
+        </view>
+      </block>
+      <view class='line' style='margin:40rpx 0;'></view>
+      <view class='share'>
+        <text>喜欢本文章可加入收藏或分享给好友</text>
+        <view bindtap="share" class="share-button" hoverClass="highlight">
+          <image class="normal" src="../images/icn-share-normal@3x.png"></image>
+          <image class="hover" src="../images/icn-share-down@3x.png"></image>
+        </view>
+
+      </view>
+    </view>
+  </view>
+</view>
+<view bindtap="actionsheetHide"  class="sheet-cover" wx:if="{{ActionSheet.items.length>0&&ActionSheet.show&&ActionSheet.corver}}"></view>
+<view class="actionsheet" style="{{ActionSheet.actionSheetStyle}}" wx:if="{{ActionSheet.items.length>0&&ActionSheet.show}}">
+  <view class="{{(index+1)===ActionSheet.items.length?'items':''}}" wx:for="{{ActionSheet.items}}" wx:key="{{index}}">
+    <button wx:if="{{item.optType === '01'}}" bindtouchstart="chooseItem" bindtap="chooseItem" class="item" data-wpychooseitem-a="{{item}}" data-wpychooseitem-b="{{index}}" openType="{{item.openType||''}}">
+      {{item.label}}
+    </button>
+    <button wx:if="{{item.optType === '02'}}" class="item" bindtap="toCanvasShare">{{item.label}}</button>
+    <button wx:if="{{item.optType === '03'}}" class="item" bindtap="enshrine">{{collection===2?item.label:item.label2}}</button>
+  </view>
+  <view class="cancel">
+    <button bindtap="actionsheetHide" class="item" hoverClass="hover">取消</button>
+  </view>
+</view>

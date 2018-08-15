@@ -1,0 +1,67 @@
+@-webkit-keyframes actionShow {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes actionShow {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.sheet-cover {
+    position: fixed;
+    z-index: 998;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.05);
+    animation: .25s linear actionShow forwards;
+}
+
+.actionsheet {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+    width: 100%;
+    background: #e7e8e8;
+    transition: bottom 250ms;
+    will-change: bottom;
+    padding-top: 1px;
+}
+
+.actionsheet .items {
+    margin-bottom: 6px;
+}
+
+.actionsheet .item {
+    font-size: 17px;
+    background: #fff;
+    border-radius: 0;
+    border: none;
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 1px;
+}
+
+.actionsheet .item.hover {
+    background: #ccc;
+}
+
+
+
+.actionsheet .item:after {
+    border-radius: 0;
+    border: none;
+}

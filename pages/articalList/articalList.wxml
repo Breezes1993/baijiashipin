@@ -1,0 +1,43 @@
+<view>
+  <view style='margin-bottom:40rpx' wx:for="{{articalList}}" wx:key="item.id">
+    <view class='first-cell' wx:if="{{index===0}}">
+      <text class='date'>今天</text>
+      <!-- <open-data bindtap="toUser" class="user" wx:if="{{!hasUserInfo}}" type="userAvatarUrl"></open-data> -->
+      <image bindtap='toUser' wx:if="{{hasUserInfo}}" data-statu="open" src='{{avatarUrl}}' class='user'></image>
+      <image wx:if="{{!hasUserInfo}}" data-statu="open" bindtap='powerDrawer' src='../images/icon_user.png' class='user'></image>
+    </view>
+    <view wx:if="{{index>=1&&articalList[index-1].add_time!==item.add_time}}">
+      <text class='date'>{{item.add_time}}</text>
+    </view>
+    <view class='list'>
+      <view wx:if="{{item.ispay==='1'&&!hasVip}}" style='position: relative;'><image class='vip-article' src="../images/icon_vip_article.png"></image></view>
+      <view class='view-text' data-item="{{item}}" data-title="{{item.title}}" data-num="{{item.view}}" data-article="{{item.id}}" bindtap="goto">
+        <text class='text'>{{item.title}}</text>
+        <text class='viewcount'>阅读量:{{item.view}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='loading' wx:if="{{!hiddenloading}}">
+    <image mode="aspectFit" src="../images/loading.gif"></image>
+  </view>
+</view>
+
+
+
+<!--mask-->
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+<!--content-->
+<!--使用animation属性指定需要执行的动画-->
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+
+  <!--drawer content-->
+  <view class="drawer_title">提示</view>
+  <view class="drawer_content">
+    <view class="top grid content">
+      <label class="">请先获取用户信息！</label>
+    </view>
+  </view>
+  <view class="btn_ok" bindtap="powerDrawer" data-statu="close">
+    <button bindgetuserinfo='getUserInfo' open-type='getUserInfo'>确定</button>
+  </view>
+</view>

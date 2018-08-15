@@ -1,0 +1,17 @@
+{
+  "pages": [
+    "pages/articalList/articalList",
+    "pages/canvasShare/convasShare",
+    "pages/user/user",
+    "pages/index/index",
+    "pages/artical/artical",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "gray",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f4f4f4",
+    "navigationBarBackgroundColor": "#f4f4f4"
+  }
+}

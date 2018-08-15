@@ -1,0 +1,203 @@
+/* pages/artical/artical.wxss */
+@import "../articalList/articalList.wxss";
+@import "../common/actionsheet.wxss";
+@import "../../wxParse/wxParse.wxss";
+
+.title {
+  font-size: 38rpx;
+  font-weight: bold;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.9);
+  /* padding: 26px 20px 0; */
+  letter-spacing: 0.8rpx;
+  word-wrap: break-word;
+  width: 100%;
+  text-align: left;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx 0 0rpx;
+  margin-bottom: 20rpx;
+}
+
+.small {
+  font-size: 26rpx;
+}
+
+.publish {
+}
+
+.view {
+  text-align: right;
+}
+
+.content {
+  font-size: 34rpx;
+  line-height: 1.85;
+  color: #8f9195;
+  /* padding: 24px 20px 0; */
+  font-family: 'PingFangSC-Light';
+  letter-spacing: 0.8rpx;
+  word-wrap: break-word;
+}
+
+.share {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  color: #8f9195;
+  font-size: 32rpx;
+  margin: 20rpx 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 54rpx;
+}
+
+.topic-opts {
+  position: relative;
+  height: 100rpx;
+  margin-top: 44rpx;
+  margin-bottom: 60rpx;
+}
+
+.instant-view {
+  color: #007ed8;
+  /* margin-left: 20px; */
+  margin-top: 28rpx;
+  width: 240rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  text-align: center;
+  border-radius: 12rpx;
+  background-color: #dfeef9;
+  font-size: 28rpx;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.instant-view button {
+  outline: none;
+  border: 0;
+  font-size: 26rpx;
+  background-color: #dfeef9;
+  color: #007ed8;
+  padding: 0;
+  margin: 0;
+}
+
+.instant-view button::after {
+  outline: none;
+  border: 0;
+}
+
+.instant-view image {
+  width: 48rpx;
+  height: 20rpx;
+  margin-right: 10rpx;
+}
+
+.highlight {
+  opacity: 0.7;
+}
+
+.share-button {
+  position: absolute;
+  /* top: 12rpx; */
+  right: 50rpx;
+}
+
+.share-button .normal {
+  display: block;
+}
+
+.hover {
+  display: none;
+}
+
+.share-button image {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.user-attitude-component .user-attitude {
+  margin-top: 29px;
+  padding: 0 20px 0;
+}
+
+.user-attitude-component .user-attitude.single .options {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.user-attitude-component .user-attitude.single .options .select-button {
+  height: 44px;
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 22px;
+  background-color: #fee4e0;
+  font-size: 17px;
+  color: #f94f56;
+}
+
+.user-attitude-component .user-attitude.single .options .select-button.selected {
+  background-color: #f84f56;
+  color: #fff;
+}
+
+.user-attitude-component .user-attitude.single .options .select-button.selected .hover-icon {
+  display: block;
+}
+
+.user-attitude-component .user-attitude.single .options .select-button.selected .default-icon {
+  display: none;
+}
+
+.user-attitude-component .user-attitude.single .options .select-button image {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  position: relative;
+  top: -1px;
+}
+
+.user-attitude-component .user-attitude.single .options .select-button .hover-icon {
+  display: none;
+}
+
+.user-attitude-component .user-attitude.single .options .select-button.highlight {
+  background-color: #f84f56;
+  color: #fff;
+}
+
+.user-attitude-component .user-attitude.single .options .select-button.highlight .hover-icon {
+  display: block;
+}
+
+.user-attitude-component .user-attitude.single .options .select-button.highlight .default-icon {
+  display: none;
+}
+
+.user-attitude-component .user-attitude.single .stat {
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  margin-top: 16px;
+}
+
+.secetion-label {
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.6);
+  margin-top: 30px;
+  padding: 0 20px 0;
+  height: 40px;
+  line-height: 40px;
+  background-color: #f5f5f5;
+}

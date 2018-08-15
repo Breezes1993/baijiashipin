@@ -1,0 +1,7 @@
+<!--pages/canvasShare/convasShare.wxml-->
+
+<canvas canvas-id='test' style='height:{{canvasHeight}}px;margin-bottom:64px;'></canvas>
+<!-- <view><image style='width:145rpx;height:145rpx;' src='{{codeimg}}'></image></view> -->
+<view class="save-image">
+  <view bindtap="saveImage"  hoverClass="hover">保存图片</view>
+</view>
